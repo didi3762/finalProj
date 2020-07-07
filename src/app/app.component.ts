@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DialogComponent } from './comps/dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proj';
+  title = 'לימוד אנגלית';
+
+
+  
 }
+

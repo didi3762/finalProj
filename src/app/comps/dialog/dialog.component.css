@@ -1,0 +1,8 @@
+mat-grid-tile {
+    background: lightcoral;
+  }
+
+  mat-grid-tile{
+      display: flex;
+      flex-direction: column;
+  }
