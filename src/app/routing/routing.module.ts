@@ -7,12 +7,12 @@ import { SiginInComponent } from '../comps/sigin-in/sigin-in.component';
 
 const routes: Routes = [
 
-  {path:'home', component:HomeComponent,
+  {path:'home', component:HomeComponent},
      
-      children:[
-           {path:'sign-in', component:SiginInComponent},
-           {path:'', redirectTo:'sign-in', pathMatch:'full'},
-      ]},
+      // children:[
+      //      {path:'sign-in', component:SiginInComponent},
+      //      {path:'', redirectTo:'sign-in', pathMatch:'full'},
+      // ]},
   
   {path:'', redirectTo:'home', pathMatch:'full'},
   // {path:'**', component:HomeComponent},

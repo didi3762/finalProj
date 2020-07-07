@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { SiginInComponent} from '../sigin-in/sigin-in.component';
+import { MatSidenav } from '@angular/material/sidenav';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'home',
@@ -10,13 +12,13 @@ import { SiginInComponent} from '../sigin-in/sigin-in.component';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent,{
+    const dialogRef = this.dialog.open(SiginInComponent,{
       data:{
          component: [SiginInComponent]
       },
@@ -28,6 +30,15 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  toggle(nav: MatSidenav) {
+    const isSmallScreen = this.breakpointObserver.isMatched(
+      "(max-width: 599px)"
+    );
+    if (isSmallScreen) {
+      nav.toggle();
+    }
   }
 
 }
