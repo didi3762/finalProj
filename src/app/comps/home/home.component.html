@@ -17,21 +17,18 @@
   </div>
 
  
+  <div class="of-drower">
+    <mat-drawer class="drower" #drawer mode="mode.over" >
 
-    <mat-drawer class="drower" #drawer mode="mode.push" >
-
-    <button mat-icon-button (click)="openDialog()"  aria-label="הרשמה"><mat-icon>create</mat-icon></button>
+    <button #signup mat-icon-button (click)="openDialog(signup)"  aria-label="הרשמה"><mat-icon>create</mat-icon></button>
   
     
-    <button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
-    <mat-menu #belowMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
+    <button #enter mat-icon-button aria-label="entery" (click)="openDialog(enter._elementRef.nativeElement.ariaLabel)" ><mat-icon>keyboard_return</mat-icon></button>
+    
     
     <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button>
     <mat-menu #beforeMenu="matMenu">
-      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item routerLink='word-table'>Item 1</button>
       <button mat-menu-item>Item 2</button>
     </mat-menu>
     
@@ -43,6 +40,10 @@
     </mat-menu>
 
 
+    <router-outlet></router-outlet>
+    
+
+
 
         <p>
           <button mat-icon-button (click)="drawer.close()">
@@ -50,23 +51,13 @@
           </button>
         </p>
         </mat-drawer>
+      </div>
     
     
     
     
 <div>
 
-    <!-- <mat-drawer-container>
-    
-        <mat-drawer-content >
-    
-    
-       <router-outlet></router-outlet>
-        </mat-drawer-content>
-      </mat-drawer-container> -->
-    
-
-<router-outlet></router-outlet>
 
 <div class="homes" >
     <h1>ברוכים הבאים</h1>

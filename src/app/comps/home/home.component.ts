@@ -17,13 +17,16 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(SiginInComponent,{
-      data:{
-         component: [SiginInComponent]
-      },
+  openDialog(butt) {
 
-      width: '250px',
+    console.log(butt);
+    
+    const dialogRef = this.dialog.open(SiginInComponent,{
+      // data:{
+      //    component: [SiginInComponent]
+      // },
+
+      // width: '250px',
     });
      
     
@@ -34,7 +37,7 @@ export class HomeComponent implements OnInit {
 
   toggle(nav: MatSidenav) {
     const isSmallScreen = this.breakpointObserver.isMatched(
-      "(max-width: 599px)"
+      "(max-width: 20px)"
     );
     if (isSmallScreen) {
       nav.toggle();

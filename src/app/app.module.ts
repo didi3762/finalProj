@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import {SlideshowModule} from 'ng-simple-slideshow';
 
@@ -12,6 +13,7 @@ import { SiginInComponent } from './comps/sigin-in/sigin-in.component';
 import { RoutingModule } from './routing/routing.module';
 import { DialogComponent } from './comps/dialog/dialog.component';
 import { MatModulModule } from './mat-modul/mat-modul.module';
+import { WordTableComponent } from './comps/word-table/word-table.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { MatModulModule } from './mat-modul/mat-modul.module';
     HomeComponent,
     PipeServicePipe,
     SiginInComponent,
-    DialogComponent
+    DialogComponent,
+    WordTableComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RoutingModule,
     SlideshowModule,
-    MatModulModule
+    MatModulModule,
+    HttpClientModule
   ],
   entryComponents: [
     DialogComponent

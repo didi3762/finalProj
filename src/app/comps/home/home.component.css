@@ -51,7 +51,8 @@ h1{
 mat-drawer{
         display: inline-block;
         padding: 5px;
+        align-self: start;
 }
-.navbar-toggler{
-        align-self: end;
-} 
+.of-drower{
+        display: flex;
+}

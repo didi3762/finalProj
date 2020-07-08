@@ -1,1 +1,53 @@
-<p>sigin-in works!</p>
+<mat-form-field  class="example-full-width"> 
+    <mat-label>שם</mat-label>
+    <input matInput placeholder="שם" #name>
+</mat-form-field>
+
+<br>
+
+<mat-form-field  class="example-full-width"> 
+    <mat-label>תעודת זהות</mat-label>
+    <input matInput placeholder="תעודת זהות" #idi>
+</mat-form-field>
+
+<br><br>
+
+<button (click)="addPerson(name.value, idi.value)" mat-raised-button color="primary">שמור</button>
+
+<br><br><br>
+
+<div *ngIf="mySvc.iAmReady | async" dir="rtl">
+    <h3>נרשמת בהצלחה</h3>
+    <label>שם: </label>
+    <span *ngIf="!failedAdd">{{mySvc.person.name}}</span>
+    <br>
+    <label>ת.ז. :</label>
+    <span *ngIf="!failedAdd">{{mySvc.person.id}}</span>
+    
+</div>
+<h3 *ngIf="failedAdd"><b>נכשל!!!</b></h3>
+
+<!-- <button (click)="mySvc.getSum()" mat-raised-button color="primary">סה"כ</button> -->
+<br>
+
+
+
+
+
+<!-- <div *ngIf="mySvc.iAmReady | async">
+    <p>c3-comm-partial2 works!</p>
+    
+    <table>
+        <tr>
+            <th>name</th>
+            <th>age</th>
+        </tr>    
+        <tr *ngFor="let p of persons">
+            <td>{{p.name}}</td>
+            <td>{{p.age}}</td>
+        </tr>
+    </table>
+
+    <h1>{{sum}}</h1>
+    <h1>{{this.mySvc.sumResult | async}}</h1>
+</div> -->
